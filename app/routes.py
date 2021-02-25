@@ -95,6 +95,7 @@ def edit_profile():
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
+        current_user.job_status = form.job_status.data
         db.session.commit()
         flash('Your profile has been updated')
         return redirect(url_for('edit_profile'))
@@ -102,4 +103,5 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
+        form.job_status.data = current_user.job_status
     return render_template('edit_profile.html', title='Edit Profile', form=form)
