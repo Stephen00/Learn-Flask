@@ -1,10 +1,13 @@
+from datetime import datetime
+
 from flask import render_template, flash, redirect, url_for, request
+from flask_login import current_user, login_user, logout_user, login_required
+from werkzeug.urls import url_parse
+
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm
 from app.models import User
-from flask_login import current_user, login_user, logout_user, login_required
-from werkzeug.urls import url_parse
-from datetime import datetime
+
 
 @app.before_request
 def before_request():
@@ -73,6 +76,7 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
+
 @app.route('/user/<username>')
 @login_required
 def user(username):
@@ -82,6 +86,7 @@ def user(username):
         {'author': user, 'body': 'Test Post #2'},
     ]
     return render_template('user.html', user=user, posts=posts)
+
 
 @app.route('/edit_profile', methods=['POST', 'GET'])
 @login_required
