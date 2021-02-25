@@ -1,0 +1,27 @@
+2021-02-25 13:48:10,296 INFO: Flask Project startup [in /Users/steve/PycharmProjects/flask_app/app/__init__.py:52]
+2021-02-25 13:48:57,663 ERROR: Exception on /edit_profile [POST] [in /Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 2098, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2021-02-25 13:50:26,098 INFO: Flask Project startup [in /Users/steve/PycharmProjects/flask_app/app/__init__.py:52]
+2021-02-25 13:50:37,561 ERROR: Exception on /edit_profile [POST] [in /Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/steve/opt/anaconda3/envs/flask_app/lib/python3.7/site-packages/flask/app.py", line 2098, in make_response
+    "The view function did not return a valid response. The"
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2021-02-25 13:55:06,517 INFO: Flask Project startup [in /Users/steve/PycharmProjects/flask_app/app/__init__.py:52]
+2021-02-25 13:57:41,921 INFO: Flask Project startup [in /Users/steve/PycharmProjects/flask_app/app/__init__.py:52]
+2021-02-25 13:58:06,055 INFO: Flask Project startup [in /Users/steve/PycharmProjects/flask_app/app/__init__.py:52]

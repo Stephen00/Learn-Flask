@@ -1,5 +1,6 @@
+import os
 import logging
-from logging.handlers import SMTPHandler
+from logging.handlers import SMTPHandler, RotatingFileHandler
 
 from flask import Flask
 from flask_login import LoginManager
@@ -17,7 +18,7 @@ login.login_view = 'login'
 
 from app import routes, models, errors
 
-# Log Errors through E-mail
+# Log Errors through E-mail using a mailHandler
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -35,3 +36,20 @@ if not app.debug:
             credentials=auth, secure=secure)
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
+
+    # Log errors to a file using a fileHandler
+    if not os.path.exists('logs'):
+        os.mkdir('logs')
+    # Max file size is 10kb and will backup previous 10 log files
+    file_handler = RotatingFileHandler('logs/flask_project.log', maxBytes=10240, backupCount=10)
+    # Format the logging message
+    file_handler.setFormatter(logging.Formatter(
+       '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('Flask Project startup')
+
+
+
